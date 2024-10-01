@@ -1,9 +1,94 @@
-<script>import "../app.css";</script>
+<script>
+    import "../app.css"; // Import your styles
+
+    let isDarkMode = true;
+
+    function toggleTheme() {
+        isDarkMode = !isDarkMode;
+    }
+</script>
 
 <svelte:head>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous">
-<link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&family=Manrope:wght@200..800&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&family=Manrope:wght@200..800&display=swap" rel="stylesheet">
 </svelte:head>
 
-<slot></slot>
+<style>
+    :global(body) {
+        margin: 0;
+        font-family: 'Manrope', sans-serif;
+    }
+
+    .theme-toggle {
+        cursor: pointer;
+        font-size: 1.5rem;
+        background: none;
+        border: none;
+        color: inherit;
+        padding: 0.5rem;
+    }
+
+    /* Dark Theme */
+    :global(.dark-mode) {
+        --background: black;
+        --text-color: white;
+    }
+
+    /* Light Theme */
+    :global(.light-mode) {
+        --background: white;
+        --text-color: black;
+    }
+
+    .main-container {
+        background-color: var(--background);
+        color: var(--text-color);
+    }
+
+    .navbar {
+        display: flex;
+        gap: 1rem;
+        justify-content: flex-end;
+        align-items: center;
+        padding: 2rem;
+    }
+
+    .navbar a {
+        text-decoration: none;
+        color: inherit;
+    }
+
+    .main-content {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        padding: 2rem;
+    }
+</style>
+
+<div class={isDarkMode ? 'dark-mode main-container' : 'light-mode main-container'}>
+    <div class="navbar">
+        <a href="/" class="mr-auto font-bold">Noel "pogi" Mateo</a>
+        <a href="/about">About</a>
+        <a href="/portfolio">Portfolio</a>
+        <a href="/contact">Contact</a>
+
+        <button 
+            class="theme-toggle" 
+            on:click={toggleTheme}
+            aria-label="Toggle dark and light mode"
+        >
+            {#if isDarkMode}
+                🌙
+            {:else}
+                ☀️
+            {/if}
+        </button>
+    </div>
+
+    <main class="main-content">
+        <slot></slot>
+    </main>
+</div>
