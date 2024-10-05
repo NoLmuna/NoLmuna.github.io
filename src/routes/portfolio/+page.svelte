@@ -2,43 +2,43 @@
 	const portfolioImages = [
 		{
 			alt: "It's for an activity to make your own logo for a site",
-			src: "portfolio/activityownlogo.png",
+			src: "Portfolio/activityownlogo.png",
 		},
 		{
 			alt: "Made with adobe photopea because I don't have an adobe photoshop",
-			src: "portfolio/adobe photoshop.png",
+			src: "Portfolio/adobe photoshop.png",
 		},
 		{
 			alt: "progress report for collage in our app dev",
-			src: "portfolio/collage.png",
+			src: "Portfolio/collage.png",
 		},
 		{
 			alt: "other part of the collage",
-			src: "portfolio/collage1.png",
+			src: "Portfolio/collage1.png",
 		},
 		{
 			alt: "It's a php web application",
-			src: "portfolio/food-order.png",
+			src: "Portfolio/food-order.png",
 		},
         {
 			alt: "initial look of what it looks like for the food ordering system",
-			src: "portfolio/food ordering system.png",
+			src: "Portfolio/food ordering system.png",
 		},
         {
 			alt: "initial look of what it looks like for the food ordering system",
-			src: "portfolio/food ordering system1.png",
+			src: "Portfolio/food ordering system1.png",
 		},
         {
 			alt: "initial look of what it looks like for the food ordering system",
-			src: "portfolio/food ordering system2.png",
+			src: "Portfolio/food ordering system2.png",
 		},
         {
 			alt: "initial look of what it looks like for the food ordering system",
-			src: "portfolio/food ordering system3.png",
+			src: "Portfolio/food ordering system3.png",
 		},
         {
 			alt: "initial look of what it looks like for the food ordering system",
-			src: "portfolio/food ordering system4.png",
+			src: "Portfolio/food ordering system4.png",
 		},
 	];
 </script>
