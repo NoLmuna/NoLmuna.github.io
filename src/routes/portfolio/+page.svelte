@@ -49,17 +49,13 @@
     <div class="grid gap-8 grid-cols-1 md:grid-cols-2">
         {#each portfolioImages as portfolioImage (portfolioImage.src)}
         <div class="w-full h-fit overflow-hidden rounded-lg text-center">
-            <!-- Image -->
             <img 
                 src={portfolioImage.src} 
                 alt={portfolioImage.alt} 
                 class="w-full h-80 object-contain hover:scale-110 transition-transform duration-300 mx-auto" 
-                loading="lazy"
             >
-            <!-- Description -->
             <p class="mt-4 text-lg">{portfolioImage.alt}</p>
         </div>
         {/each}
     </div>
 </div>
-
