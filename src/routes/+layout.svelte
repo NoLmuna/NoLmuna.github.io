@@ -15,64 +15,76 @@
 </svelte:head>
 
 <style>
-    :global(body) {
-        margin: 0;
-        font-family: 'Manrope', sans-serif;
-    }
+    :global(html), :global(body) {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    overflow-x: hidden; 
+    font-family: 'Comfortaa', sans-serif;
+}
 
-    .theme-toggle {
-        cursor: pointer;
-        font-size: 1.5rem;
-        background: none;
-        border: none;
-        color: inherit;
-        padding: 0.5rem;
-    }
+.main-container {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background-color: var(--background);
+    color: var(--text-color);
+}
 
-    /* Dark Theme */
-    :global(.dark-mode) {
-        --background: black;
-        --text-color: white;
-    }
+.navbar {
+    display: flex;
+    gap: 1rem;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 1rem 2rem;
+    border-bottom: 1px solid var(--text-color);
+}
 
-    /* Light Theme */
-    :global(.light-mode) {
-        --background: white;
-        --text-color: black;
-    }
+.navbar a {
+    text-decoration: none;
+    color: inherit;
+}
 
-    .main-container {
-        background-color: var(--background);
-        color: var(--text-color);
-    }
+.theme-toggle {
+    cursor: pointer;
+    font-size: 1.5rem;
+    background: none;
+    border: none;
+    color: inherit;
+    padding: 0.5rem;
+}
 
-    .navbar {
-        display: flex;
-        gap: 1rem;
-        justify-content: flex-end;
-        align-items: center;
-        padding: 2rem;
-    }
+.main-content {
+    flex: 1; 
+    padding: 2rem; 
+    display: flex; 
+    flex-direction: column; 
+    gap: 1rem; 
+    justify-content: center;
+    align-items: center;
+    background-color: var(--background);
+    color: var(--text-color);
+}
 
-    .navbar a {
-        text-decoration: none;
-        color: inherit;
-    }
+/* Dark Theme */
+:global(.dark-mode) {
+    --background: black;
+    --text-color: white;
+}
 
-    .main-content {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        min-height: 100vh;
-        padding: 2rem;
-    }
+/* Light Theme */
+:global(.light-mode) {
+    --background: white;
+    --text-color: black;
+}
 </style>
 
 <div class={isDarkMode ? 'dark-mode main-container' : 'light-mode main-container'}>
     <div class="navbar">
         <a href="/" class="mr-auto font-bold">Noel "pogi" Mateo</a>
-        <a href="/about">About</a>
+        <a href="/">Home</a>
         <a href="/portfolio">Portfolio</a>
+        <a href="/about">About</a>
         <a href="/contact">Contact</a>
 
         <button 
